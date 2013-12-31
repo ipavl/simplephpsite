@@ -1,7 +1,7 @@
 SimplePHPSite
 =============
 
-A clean copy of a re-written and improved version of my previous website template released in April 2012 with more features and more configurable.
+A clean copy of a re-written and improved version of my previous website template originally released in April 2012 with more options and features.
 
 Things included
 ---------------
