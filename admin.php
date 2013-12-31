@@ -36,10 +36,12 @@
         <script src="js/email.js" type="text/javascript"></script>
 
         <?php
-            /* Force SSL based on the configuration file settings */
-            if (isset($forceSSL) && $forceSSL) {
-                header("Location: https://" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]);
-                exit();
+            /* Force SSL? */
+            if ($_SERVER["HTTPS"] != "on" && isset($config['forceSSL']) && isset($config['forceLocalSSL'])) {
+                if ((($_SERVER["HTTP_HOST"] != "127.0.0.1") && $config['forceSSL']) || ($_SERVER["HTTP_HOST"] == "127.0.0.1") && $config['forceLocalSSL']) {
+                    header("Location: https://" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]);
+                    exit();
+                }
             }
         ?>
     </head>
