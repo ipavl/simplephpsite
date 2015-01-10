@@ -28,7 +28,6 @@
         <link rel="stylesheet "href="css/simplephpsite.css"/>
         <link rel="stylesheet" href="css/custom.css" />
 
-        <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" />
         <link rel="stylesheet" href="fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
         <link rel="stylesheet" href="fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" media="screen" />
         <link rel="stylesheet" href="fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7" type="text/css" media="screen" />
@@ -46,7 +45,7 @@
         ?>
     </head>
 
-    <body background="images/splash.jpg" class="cover">
+    <body>
         <?php include('includes/header.php'); ?>
 
         <div class="container">
@@ -55,7 +54,6 @@
                     <div class="col-lg-12">
                         <h1 class="page-header">SimplePHPSite Admin</h1>
                     </div>
-
                 </div>
 
                 <div class="row">
@@ -77,7 +75,6 @@
         <!-- Bootstrap core JavaScript -->
         <!-- Placed at the end of the document so the pages load faster -->
         <script src="js/jquery.js"></script>
-        <script src="js/modern-business.js"></script>
 
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/bootstrap.js"><\/script>')</script>

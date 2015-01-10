@@ -2,20 +2,11 @@
  * Additional CSS for SimplePHPSite
  */
 .content {
-
-}
-
-.content small {
-  color: rgb(179, 179, 179);
+  margin-top: 50px;
 }
 
 #footer-copyright {
   margin-top: 40px;
+  margin-bottom: 10px;
   text-align: center;
-}
-
-#notice {
-  color: red;
-  position: absolute;
-  top: 55px;
 }

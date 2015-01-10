@@ -51,11 +51,9 @@
         <link rel="stylesheet" href="css/bootstrap.min.css" />
 
         <!-- Add custom CSS here -->
-        <link rel="stylesheet" href="css/modern-business.css" />
         <link rel="stylesheet "href="css/simplephpsite.css"/>
         <link rel="stylesheet" href="css/custom.css" />
 
-        <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" />
         <link rel="stylesheet" href="fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
         <link rel="stylesheet" href="fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" media="screen" />
         <link rel="stylesheet" href="fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7" type="text/css" media="screen" />
@@ -74,43 +72,47 @@
     </head>
 
     <body>
-        <?php include('includes/header.php'); ?>
+    <?php include('includes/header.php'); ?>
 
         <div class="container">
             <div class="content">
-                <?php
-                    if (file_exists('includes/admin.php') && $adminFileWarning) {
-                        echo "<div id=\"notice\">The file <code>includes/admin.php</code> exists! If you are done configuring your site, please delete it! If you have restricted access to it, you can disable this message in index.php.</div>";
-                    }
-
-                    if (isset($_GET[$pageParam]) && trim($_GET[$pageParam]) != "") {
-                        $p = $_GET[$pageParam];
-                        $file_check = $pageDir . "/" . $p;
-
-                        if (file_exists($file_check)) {
-                            include($file_check);
-                        } else {
-                            // Check to see if a custom 404 page exists
-                            if (file_exists('includes/404.php')) {
-                                include('includes/404.php');
-                            } else {
-                                echo "The page you requested could not be found.";
-                            }
+                <div class="row">
+                    <div class="col-lg-12">
+                        <?php
+                        if (file_exists('includes/admin.php') && $adminFileWarning) {
+                            echo '<div class="alert alert-danger" role="alert">
+                              The file <code>includes/admin.php</code> exists! If you are done configuring your site, please delete it!
+                              If you have restricted access to it, you can disable this message in index.php.
+                            </div>';
                         }
-                    } else {
-                        //echo 'No page specified.';
-                        include($pageDir . '/' . $indexPage);
-                    }
-                ?>
+
+                        if (isset($_GET[$pageParam]) && trim($_GET[$pageParam]) != "") {
+                            $p = $_GET[$pageParam];
+                            $file_check = $pageDir . "/" . $p;
+
+                            if (file_exists($file_check)) {
+                                include($file_check);
+                            } else {
+                                // Check to see if a custom 404 page exists
+                                if (file_exists('includes/404.php')) {
+                                    include('includes/404.php');
+                                } else {
+                                    echo "The page you requested could not be found.";
+                                }
+                            }
+                        } else {
+                            //echo 'No page specified.';
+                            include($pageDir . '/' . $indexPage);
+                        }
+                        ?>
+                    </div>
+                </div>
             </div>
         </div><!-- /.container -->
-
-        <?php include('includes/footer.php'); ?>
 
         <!-- Bootstrap core JavaScript -->
         <!-- Placed at the end of the document so the pages load faster -->
         <script src="js/jquery.js"></script>
-        <script src="js/modern-business.js"></script>
 
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/bootstrap.js"><\/script>')</script>
