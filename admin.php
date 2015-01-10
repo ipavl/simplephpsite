@@ -1,5 +1,5 @@
 <?php
-    /************************************************************************************************   
+    /************************************************************************************************
      *   File name: admin.php
      *
      *      Author: I. Pavlinic
@@ -60,11 +60,12 @@
 
                 <div class="row">
                     <div class="col-lg-12">
-                        <p><font color="orange"><strong>Note:</strong> At the moment, this page is completed unsecured. That means anyone 
-                            could edit your configuration file via this page! Once you have set your settings, delete the following files  
-                            or otherwise prevent access to them: <code>admin.php</code> and <code>includes/admin.php</code> (the latter being 
-                            the most important). You can always manually edit your configuration file or re-upload these pages temporarily 
-                            if you need to change something at a later time.</font></p>
+                        <div class="alert alert-warning" role="alert"><strong>Note:</strong> At the moment, this page is completed unsecured. That means anyone
+                            could edit your configuration file via this page! Once you have set your settings, delete the following files
+                            or otherwise prevent access to them: <code>admin.php</code> and <code>includes/admin.php</code> (the latter being
+                            the most important). You can always manually edit your configuration file or re-upload these pages temporarily
+                            if you need to change something at a later time.
+                        </div>
                         <?php require_once('includes/admin.php'); ?>
                     </div>
                 </div>

@@ -1,5 +1,5 @@
 <?php
-    /************************************************************************************************   
+    /************************************************************************************************
      *   File name: includes/admin.php
      *
      *      Author: I. Pavlinic
@@ -10,7 +10,7 @@
 	$config = include('includes/config.php');
 
 	// This will only be executed if the form was submitted
-	if (isset($_POST['btnSubmit'])) {
+	if (isset($_POST['btnSubmit']) && is_writable("includes/config.php")) {
 		if (isset($_POST['titleText']))
 			$config['titleText'] = $_POST['titleText'];
 		if (isset($_POST['pageDir']))
@@ -33,7 +33,7 @@
 			$config['forceSSL'] = true;
 		else
 			$config['forceSSL'] = false;
-		
+
 		if (isset($_POST['forceLocalSSL']) && $_POST['forceLocalSSL'] == "on")
 			$config['forceLocalSSL'] = true;
 		else
@@ -46,10 +46,14 @@
 			echo "<p><font color=\"red\">Configuration could not be saved successfully.</font></p>";
 		}
 	}
+
+  if (!is_writable("includes/config.php")) {
+    echo '<div class="alert alert-danger" role="alert"><strong>Note:</strong> PHP does not have write permissions to <code>includes/config.php</code>! Changes cannot be saved.</div>';
+  }
 ?>
 
 <form name="adminPanel" method="POST">
-    <p>You can view and edit configuration settings for your SimplePHPSite installation here.</p>
+  <p>You can view and edit configuration settings for your SimplePHPSite installation here.</p>
 
 	<p><strong>General Options</strong></p>
 
