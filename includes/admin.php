@@ -41,9 +41,9 @@
 
 		try {
 			file_put_contents('includes/config.php', '<?php return ' . var_export($config, true) . '; ?>');
-			echo "<p><font color=\"lime\">Configuration saved successfully.</font></p>";
+			echo '<div class="alert alert-success" role="alert">Configuration saved successfully.</div>';
 		} catch (Exception $ex) {
-			echo "<p><font color=\"red\">Configuration could not be saved successfully.</font></p>";
+			echo '<div class="alert alert-danger" role="alert">Configuration could not be saved successfully.</div>';
 		}
 	}
 
