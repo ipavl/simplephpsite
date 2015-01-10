@@ -70,19 +70,6 @@
         </div><!-- /.container -->
 
         <?php include('includes/footer.php'); ?>
-
-        <!-- Bootstrap core JavaScript -->
-        <!-- Placed at the end of the document so the pages load faster -->
-        <script src="js/jquery.js"></script>
-
-        <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/bootstrap.js"><\/script>')</script>
-
-        <!-- Non-Bootstrap -->
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/jquery.js"><\/script>')</script>
-
-        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/jquery-ui.min.1.10.3.js"><\/script>')</script>
+        <?php include('includes/javascript.php'); ?>
     </body>
 </html>
