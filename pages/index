@@ -6,7 +6,7 @@ Things to do now:
 
 * adjust configuration settings in `includes/config.php` either by hand or using [admin.php](admin.php)
 * <font color="red">delete `admin.php` and `includes/admin.php`!</font>
-* replace the content of the `content/index` file with your home page content
-* add your other content as files in the `content` directory
+* replace the content of the `pages/index` file with your home page content
+* add your other content as files in the `pages` directory
 * edit the navigation links in `includes/navigation.php`
 * add custom CSS to `css/custom.css`
