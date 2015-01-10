@@ -24,7 +24,6 @@
         <link rel="stylesheet" href="css/bootstrap.css" />
 
         <!-- Add custom CSS here -->
-        <link rel="stylesheet" href="css/modern-business.css" />
         <link rel="stylesheet "href="css/simplephpsite.css"/>
         <link rel="stylesheet" href="css/custom.css" />
 
