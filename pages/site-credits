@@ -1,0 +1,14 @@
+<!--
+  You can style this page, but its contents must remain intact and be linked to from somewhere.
+  If you don't need a library, then you can remove it and its listing from here. If you remove
+  all the additional libraries (where this page would just list SimplePHPSite), you can remove
+  this page as long as a link to the project page remains in either the page footer or elsewhere.
+-->
+
+# Site Credits
+
+This site is built with the following technologies:
+
+* [SimplePHPSite](https://github.com/ipavl/simplephpsite)
+* [Fancybox](http://www.fancyapps.com/fancybox/), licensed under the [Creative Commons Attribution-NonCommercial 3.0](https://creativecommons.org/licenses/by-nc/3.0/) license
+* [Bootstrap](http://getbootstrap.com/), licensed under the [MIT license](https://github.com/twbs/bootstrap/blob/master/LICENSE)
