@@ -24,6 +24,11 @@
 		if (isset($_POST['logoText']))
 			$config['logoText'] = $_POST['logoText'];
 
+		if (isset($_POST['sidebar']) && $_POST['sidebar'] == "on")
+			$config['sidebar'] = true;
+		else
+			$config['sidebar'] = false;
+
 		if (isset($_POST['useImageLogo']) && $_POST['useImageLogo'] = "on")
 			$config['useImageLogo'] = true;
 		else
@@ -68,6 +73,8 @@
 
 	<p>Default page (will be used if no page is specified through parameters)</p>
 	<input name="indexPage" type="text" value="<?php echo $config['indexPage']; ?>"><br/><br/>
+
+	<input name="sidebar" type="checkbox" <?php if ($config['sidebar']) echo "checked=checked"; ?>"> Show the sidebar?<br/><br/>
 
 	<p><strong>Logo Options</strong></p>
 	<input name="useImageLogo" type="checkbox" <?php if ($config['useImageLogo'] == true) echo "checked=checked"; ?>"> Use an image as a logo<br/><br/>

@@ -67,38 +67,44 @@
     <?php include('includes/header.php'); ?>
 
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="content">
-                        <?php
-                        if (file_exists('includes/admin.php') && $adminFileWarning) {
-                            echo '<div class="alert alert-danger" role="alert">
-                              The file <code>includes/admin.php</code> exists! If you are done configuring your site, please delete it!
-                              If you have restricted access to it, you can disable this message in index.php.
-                            </div>';
-                        }
+            <div class="content">
+                <div class="row">
+                    <div class="page-content">
+                    <?php
+                    if (file_exists('includes/admin.php') && $adminFileWarning) {
+                        echo '<div class="alert alert-danger" role="alert">
+                          The file <code>includes/admin.php</code> exists! If you are done configuring your site, please delete it!
+                          If you have restricted access to it, you can disable this message in index.php.
+                        </div>';
+                    }
 
-                        if (isset($_GET[$pageParam]) && trim($_GET[$pageParam]) != "") {
-                            $p = $_GET[$pageParam];
-                            $file_check = $pageDir . "/" . $p;
+                    echo $config['sidebar'] ? '<div class="col-lg-9">' : '<div class="col-lg-12">';
 
-                            if (file_exists($file_check)) {
-                                echo '<div class="page-content">';
-                                echo Markdown::defaultTransform(file_get_contents($file_check));
-                                echo '</div>';
-                            } else {
-                                // Check to see if a custom 404 page exists
-                                if (file_exists('includes/404.php')) {
-                                    include('includes/404.php');
-                                } else {
-                                    echo "The page you requested could not be found.";
-                                }
-                            }
+                    if (isset($_GET[$pageParam]) && trim($_GET[$pageParam]) != "") {
+                        $p = $_GET[$pageParam];
+                        $file_check = $pageDir . "/" . $p;
+
+                        if (file_exists($file_check)) {
+                            echo Markdown::defaultTransform(file_get_contents($file_check));
                         } else {
-                            //echo 'No page specified.';
-                            include($pageDir . '/' . $indexPage);
+                            // Check to see if a custom 404 page exists
+                            if (file_exists('includes/404.php')) {
+                                include('includes/404.php');
+                            } else {
+                                echo "The page you requested could not be found.";
+                            }
                         }
-                        ?>
+                    } else {
+                        //echo 'No page specified.';
+                        include($pageDir . '/' . $indexPage);
+                    }
+
+                    echo '</div>';
+
+                    if ($config['sidebar']) {
+                        include('includes/sidebar.php');
+                    }
+                    ?>
                     </div>
                 </div>
             </div>
