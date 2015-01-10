@@ -110,6 +110,8 @@
             </div>
         </div><!-- /.container -->
 
+    <?php include('includes/footer.php'); ?>
+
         <!-- Bootstrap core JavaScript -->
         <!-- Placed at the end of the document so the pages load faster -->
         <script src="js/jquery.js"></script>
