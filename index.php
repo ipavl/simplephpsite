@@ -43,7 +43,7 @@
         <link rel="stylesheet" href="css/bootstrap.min.css" />
 
         <!-- Add custom CSS here -->
-        <link rel="stylesheet "href="css/simplephpsite.css" />
+        <link rel="stylesheet" href="css/simplephpsite.css" />
         <link rel="stylesheet" href="css/custom.css" />
 
         <link rel="stylesheet" href="fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
