@@ -16,20 +16,9 @@
     $config = include_once('includes/config.php');
 
     // Create default values if they are not set or config.php is missing, otherwise load the config ones
-    if (!isset($config['pageDir']))
-        $pageDir = "pages";
-    else
-        $pageDir = $config['pageDir'];
-
-    if (!isset($config['pageParam']))
-        $pageParam = "page";
-    else
-        $pageParam = $config['pageParam'];
-
-    if (!isset($config['indexPage']))
-        $indexPage = "index";
-    else
-        $indexPage = $config['indexPage'];
+    $pageDir = isset($config['pageDir']) ? $config['pageDir'] : "pages";
+    $pageParam = isset($config['pageParam']) ? $config['pageParam'] : "page";
+    $indexPage = isset($config['indexPage']) ? $config['indexPage'] : "index";
 ?>
 <!DOCTYPE html>
 <html lang="en">
