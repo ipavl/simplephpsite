@@ -1,14 +1,12 @@
-            <h1 class="page-header">Welcome to SimplePHPSite</h1>
+# Welcome to SimplePHPSite
 
-            <p>This is the default installation for SimplePHPSite.</p>
+This is the default installation for SimplePHPSite.
 
-            <p>Things to do now:</p>
+Things to do now:
 
-            <ul>
-              <li>adjust configuration settings in <code>includes/config.php</code> either by hand or using <a href="admin.php">admin.php</a></li>
-              <li><font color="red">delete  <code>admin.php</code> and <code>includes/admin.php</code>!</font></li>
-              <li>replace the content of the <code>pages/index</code> file with your home page content</li>
-              <li>edit the navigation links in <code>includes/navigation.php</code></li>
-              <li>add custom CSS to <code>css/custom.css</code></li>
-              <li>replace the <code>images/splash.jpg</code> file with your own background image</li>
-            </ul>
+* adjust configuration settings in `includes/config.php` either by hand or using [admin.php](admin.php)
+* <font color="red">delete `admin.php` and `includes/admin.php`!</font>
+* replace the content of the `content/index` file with your home page content
+* add your other content as files in the `content` directory
+* edit the navigation links in `includes/navigation.php`
+* add custom CSS to `css/custom.css`

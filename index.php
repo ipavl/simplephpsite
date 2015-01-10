@@ -9,10 +9,13 @@
      *
      *       Notes: At the moment, page extensions DO matter, so in order to have a URL like this:
      *              /index.php?page=sample (WITHOUT a file extension), the file to include must also
-     *              not have an extension, i.e. /pages/sample and not /pages/sample.html.
+     *              not have an extension, i.e. /pages/sample and not /pages/sample.md.
      ************************************************************************************************/
 
-    $adminFileWarning = true;   /* You can set this to false if you've restricted access to includes/admin.php */
+    require_once('includes/library/Michelf/Markdown.inc.php');
+    use \Michelf\Markdown;
+
+    $adminFileWarning = false;   /* You can set this to false if you've restricted access to includes/admin.php */
     $config = include_once('includes/config.php');
 
     // Create default values if they are not set or config.php is missing, otherwise load the config ones
@@ -40,7 +43,7 @@
         <link rel="stylesheet" href="css/bootstrap.min.css" />
 
         <!-- Add custom CSS here -->
-        <link rel="stylesheet "href="css/simplephpsite.css"/>
+        <link rel="stylesheet "href="css/simplephpsite.css" />
         <link rel="stylesheet" href="css/custom.css" />
 
         <link rel="stylesheet" href="fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
@@ -64,9 +67,9 @@
     <?php include('includes/header.php'); ?>
 
         <div class="container">
-            <div class="content">
-                <div class="row">
-                    <div class="col-lg-12">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="content">
                         <?php
                         if (file_exists('includes/admin.php') && $adminFileWarning) {
                             echo '<div class="alert alert-danger" role="alert">
@@ -80,7 +83,9 @@
                             $file_check = $pageDir . "/" . $p;
 
                             if (file_exists($file_check)) {
-                                include($file_check);
+                                echo '<div class="page-content">';
+                                echo Markdown::defaultTransform(file_get_contents($file_check));
+                                echo '</div>';
                             } else {
                                 // Check to see if a custom 404 page exists
                                 if (file_exists('includes/404.php')) {
