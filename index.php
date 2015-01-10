@@ -39,7 +39,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title><?php 
+        <title><?php
             if (isset($config['titleText'])) {
                 echo $config['titleText'];
             } else {
@@ -48,7 +48,7 @@
         ?></title>
 
         <!-- Bootstrap core CSS -->
-        <link rel="stylesheet" href="css/bootstrap.css" />
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
 
         <!-- Add custom CSS here -->
         <link rel="stylesheet" href="css/modern-business.css" />
@@ -133,19 +133,19 @@
                     heightStyle: "content"
                 });
             });
-            
+
             $(document).ready(function() {
                 $(".fancybox").fancybox({
                     beforeShow : function() {
                         var alt = this.element.find('img').attr('alt');
-                    
+
                         this.inner.find('img').attr('alt', alt);
-                    
+
                         this.title = alt;
                     }
                 });
             });
-            
+
             $(".fancybox").fancybox();
         </script>
     </body>
