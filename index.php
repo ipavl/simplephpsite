@@ -73,7 +73,7 @@
         ?>
     </head>
 
-    <body background="images/splash.jpg" class="cover">
+    <body>
         <?php include('includes/header.php'); ?>
 
         <div class="container">
