@@ -96,7 +96,7 @@
                         }
                     } else {
                         //echo 'No page specified.';
-                        include($pageDir . '/' . $indexPage);
+                        echo Markdown::defaultTransform(file_get_contents($pageDir . '/' . $indexPage));
                     }
 
                     echo '</div>';
